@@ -85,7 +85,7 @@ describe("findNeedle", () => {
   test("returns true if any of the properties of an object contain the specified string", () => {
     const obj1 = {
       name: "LINNMON",
-      description: "Small round table",
+      xdescription: "Small round table",
       price: 31.89,
       store: "Warrington",
       code: 12872,
@@ -106,7 +106,7 @@ describe("findNeedle", () => {
   test("returns false if none of the properties of an object contain the specified string", () => {
     const obj1 = {
       name: "LINNMON",
-      description: "Small round table",
+      xdescription: "Small round table",
       price: 31.89,
       store: "Warrington",
       code: 12872,
@@ -127,7 +127,7 @@ describe("findNeedle", () => {
   test("The search string should not be case sensitive", () => {
     const obj1 = {
       name: "LINNMON",
-      description: "Small round table",
+      xdescription: "Small round table",
       price: 31.89,
       store: "Warrington",
       code: 12872,
