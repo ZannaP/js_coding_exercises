@@ -5,7 +5,7 @@
 export function printColours(colours) {
   if (!colours) throw new Error("colour is required");
   console.log(...colours);
-  return colours;
+  return [...colours];
 }
 
 export function shoppingList(list, newItem) {
@@ -21,7 +21,7 @@ export function highestNumber(numbers) {
 
 export function splitThatString(string) {
   if (!string) throw new Error("string is required");
-  return string.split("");
+  return [...string];
 }
 
 // Optional Chaining Bonus activity!
