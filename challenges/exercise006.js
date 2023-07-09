@@ -138,6 +138,5 @@ export const areWeCovered = (staff, day) => {
       }
     });
   });
-  console.log(staffCountOnDay);
   return staffCountOnDay >= 3;
 };

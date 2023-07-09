@@ -71,7 +71,6 @@ export const getWordFrequencies = (str) => {
   const punctuation = [".", ",", "!", "-", "?", ":", ";"];
   let frequencies = {};
   punctuation.forEach((el) => (str = str.replaceAll(el, "")));
-  console.log(str);
   str
     .toLowerCase()
     .split(" ")
