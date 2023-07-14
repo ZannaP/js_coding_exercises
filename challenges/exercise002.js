@@ -15,20 +15,27 @@ export function getBusNumbers(people) {
 
 export function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
+  /*
   let counter = 0;
   arr.map((el) => {
     if (el === "sheep") counter++;
   });
   return counter;
+  */
+  return arr.filter((e) => e === "sheep").length;
 }
 
 export function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  if (
+  /*if (
     person.address.postCode[0] === "M" &&
     person.address.city === "Manchester"
   ) {
     return true;
   }
-  return false;
+  return false;*/
+  return (
+    person.address.postCode.charAt(0) === "M" &&
+    person.address.city === "Manchester"
+  );
 }

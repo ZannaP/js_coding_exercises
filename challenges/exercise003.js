@@ -5,15 +5,23 @@ export function getSquares(nums) {
 
 export function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
+  /*
   let str = "";
   words.forEach((word) => {
     str = str + word[0].toUpperCase() + word.substring(1);
   });
   return str[0].toLowerCase() + str.substring(1);
+  */
+  //  use REDUCE
+  let str = words.reduce(
+    (result, current) => result + current[0].toUpperCase() + current.slice(1)
+  );
+  return str[0].toLowerCase() + str.slice(1);
 }
 
 export function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
+  /*
   let counter = 0;
   people.forEach((person) => {
     person.subjects.forEach((subj) => {
@@ -21,9 +29,12 @@ export function getTotalSubjects(people) {
     });
   });
   return counter;
+  */
+  return people.reduce((total, person) => total + person.subjects.length, 0);
 }
 
 export function checkIngredients(menu, ingredient) {
+  /*
   let found = false;
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
@@ -33,6 +44,8 @@ export function checkIngredients(menu, ingredient) {
     }
   });
   return found;
+  */
+  return menu.some((item) => item.ingredients.includes(ingredient));
 }
 
 export function duplicateNumbers(arr1, arr2) {

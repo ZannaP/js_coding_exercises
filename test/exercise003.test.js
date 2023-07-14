@@ -15,9 +15,13 @@ describe("camelCaseWords", () => {
     expect(camelCaseWords(["my", "variable"])).toBe("myVariable");
   });
 
+  test("if first word is Capitalized", () => {
+    expect(camelCaseWords(["My", "variable"])).toBe("myVariable");
+  });
+
   test("camel cases two+ words (i.e. all words after 1st are capitalized)", () => {
     expect(camelCaseWords(["my", "variable"])).toBe("myVariable");
-    expect(camelCaseWords(["my", "variable", "name"])).toBe("myVariableName");
+    expect(camelCaseWords(["My", "variable", "name"])).toBe("myVariableName");
     expect(camelCaseWords(["is", "unique"])).toBe("isUnique");
     expect(camelCaseWords(["is", "higher", "than", "min", "number"])).toBe(
       "isHigherThanMinNumber"

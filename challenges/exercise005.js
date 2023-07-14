@@ -1,12 +1,16 @@
 export const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
+  /*
   const indexOfN = nums.indexOf(n);
   if (indexOfN === -1 || indexOfN === nums.length - 1) {
     return null;
   } else {
     return nums[indexOfN + 1];
   }
+  */
+  const nIndex = nums.indexOf(n);
+  return nIndex > -1 && nIndex < nums.length - 1 ? nums[nIndex + 1] : null;
 };
 
 export const count1sand0s = (str) => {
@@ -31,6 +35,7 @@ export const reverseNumber = (n) => {
 
 export const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
+  /*
   let sum = 0;
   arrs.forEach((el) => {
     let s = 0;
@@ -40,6 +45,10 @@ export const sumArrays = (arrs) => {
     sum += s;
   });
   return sum;
+  */
+  // avoid nested forEach
+  const flattenedInput = arrs.flat();
+  return flattenedInput.reduce((total, element) => total + element);
 };
 
 export const arrShift = (arr) => {
@@ -82,4 +91,5 @@ export const getWordFrequencies = (str) => {
       }
     });
   return frequencies;
+  // Rather than hardcoding your punctuation array in this solution, you could instead have a look at using regex (with .replace) to remove punctuation.
 };

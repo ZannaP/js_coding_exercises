@@ -12,7 +12,9 @@ export function capitalize(word) {
 export function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  return firstName[0] + "." + lastName[0];
+  // return firstName[0] + "." + lastName[0];
+  // another way - use template literals
+  return `${firstName[0].toUpperCase()}.${lastName[0].toUpperCase()}`;
 }
 
 export function addVAT(originalPrice, vatRate) {
@@ -30,6 +32,7 @@ export function getSalePrice(originalPrice, reduction) {
 export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
   const strLength = str.length;
+  /*
   if (strLength % 2 === 0) {
     // if even
     const start = strLength / 2 - 1;
@@ -38,6 +41,11 @@ export function getMiddleCharacter(str) {
     // if odd
     return str[Math.floor(strLength / 2)];
   }
+  */
+  // another way - use short IF
+  return str.length % 2 === 0
+    ? str[str.length / 2 - 1] + str[str.length / 2]
+    : str[Math.floor(str.length / 2)];
 }
 
 export function reverseWord(word) {
@@ -52,6 +60,7 @@ export function reverseAllWords(words) {
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
+  /*
   let linuxUsersCount = 0;
   for (const u of users) {
     if (u.type === "Linux") {
@@ -59,13 +68,23 @@ export function countLinuxUsers(users) {
     }
   }
   return linuxUsersCount;
+  */
+  // shorter way with FILTER
+  return users.filter((u) => u.type === "Linux").length;
 }
 
 export function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
+  /*
   let sum = 0;
   scores.forEach((el) => (sum = sum + el));
   return Math.round((100 * sum) / scores.length) / 100;
+  */
+  // another way - with REDUCE
+  return (
+    Math.round((100 * scores.reduce((sum, el) => sum + el)) / scores.length) /
+    100
+  );
 }
 
 export function simpleFizzBuzz(n) {

@@ -20,6 +20,7 @@ export const sumMultiples = (arr) => {
     }
   });
   return sum;
+  // Here we could make the code even shorter by using .reduce in order to sum the numbers, rather than creating a sum variable. We can also swap our if statement to be a turnery in any situation like this where there are only two outcomes.
 };
 
 /**
@@ -49,6 +50,7 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  // Here it would be best practise to have both our Arrays as const as opposed to let
   let allowedChars = ["C", "G", "T", "A"];
   let complementaryChars = ["G", "C", "A", "T"];
   return str

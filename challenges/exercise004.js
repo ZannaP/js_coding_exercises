@@ -42,5 +42,6 @@ export function getLongestSides(triangles) {
       return b - a;
     });
     return el[0];
+    // Brilliant solution!If you want to make this bit of code even shorter, you can use Math.max() to find the largest number.
   });
 }
